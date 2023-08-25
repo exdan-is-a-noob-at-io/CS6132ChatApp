@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.message{
+  padding: 10px;
+  font: 18px "Century Gothic", Futura, sans-serif;  
+  background-color: rgb(155, 187, 255, 1);
+  border-left:2px solid rgb(0, 0, 0, 0.5);
+  border-right:2px solid rgb(0, 0, 0, 0.5);
+  border-top:1px solid rgb(0, 0, 0, 0.5);
+  border-bottom:1px solid rgb(0, 0, 0, 0.5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.messages {
+  height: 88vh;
+  min-height: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.messages > div{
+  flex:1;
+  overflow-y: auto;
+}
+
+.hFlex{
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin:10px
 }
 
-.App-link {
-  color: #61dafb;
+.hFlex > p {
+  margin: 0;
+  font-size: 20px;
+  padding-right: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding:20px;
+}
+
+input{
+  font-size: 20px;
+}
+
+form > input:first-of-type{
+  width: 150px;
+}
+
+form > input:nth-of-type(2){
+  width: 500px;
 }
