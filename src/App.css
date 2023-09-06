@@ -14,14 +14,74 @@ code {
     monospace;
 }
 
-.message{
-  padding: 10px;
+html {
+  background-color: black;
+}
+
+p {
+  color:white;
   font: 18px "Century Gothic", Futura, sans-serif;  
-  background-color: rgb(155, 187, 255, 1);
-  border-left:2px solid rgb(0, 0, 0, 0.5);
-  border-right:2px solid rgb(0, 0, 0, 0.5);
-  border-top:1px solid rgb(0, 0, 0, 0.5);
-  border-bottom:1px solid rgb(0, 0, 0, 0.5);
+  margin: 2px;
+}
+
+form{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding:20px;
+}
+
+input{
+  font-size: 20px;
+  background-color: transparent;
+  color:white;
+  border: 1px solid #999;
+}
+
+form > input:first-of-type{
+  width: 150px;
+}
+
+form > input:nth-of-type(2){
+  width: 500px;
+}
+
+.message{
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+  width: 80%;
+  overflow-wrap: break-word;
+  
+  right:auto;
+  margin-left: 30px; 
+  margin-right: auto;
+}
+
+.currUserMessaage{
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  margin-bottom: 8px;
+  width: 80%;
+  overflow-wrap: break-word;
+
+  right:30px;
+  margin-left: auto; 
+  margin-right: 30px;
+  text-align: right;
+}
+
+.user {
+  color:cyan;
+}
+
+.currUser {
+  color: rgb(0, 255, 0);
 }
 
 .messages {
@@ -48,24 +108,4 @@ code {
   padding-right: 10px;
 }
 
-form{
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding:20px;
-}
 
-input{
-  font-size: 20px;
-}
-
-form > input:first-of-type{
-  width: 150px;
-}
-
-form > input:nth-of-type(2){
-  width: 500px;
-}

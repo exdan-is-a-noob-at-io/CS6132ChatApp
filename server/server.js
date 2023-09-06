@@ -5,6 +5,7 @@ const io = require('socket.io')(3000,{
   })
 
 const groupInfo = new Map()
+const userInfo = new Map()
 
 
 
@@ -28,7 +29,7 @@ io.on('connection', socket => {
       if (groupInfo.get(room) === undefined){
         groupInfo.set(room, {messages: []})
       }
-      update(groupInfo.get(room)["messages"])
+      update(groupInfo.get(room)["messages"], JSON.stringify([...userInfo]))
     })
 
     socket.on('message', (name, mess, room, update) => {
@@ -41,17 +42,18 @@ io.on('connection', socket => {
       const currMessages = [...groupInfo.get(room)["messages"]]
       
       currMessages.push({
-        "user": name,
+        "user": socket.id,
         "message": mess,
         "time": new Date(),
         "key": currMessages.length
       })
 
-      console.log(currMessages)
-
       groupInfo.set(room, {messages: currMessages})
+      userInfo.set(socket.id, name)
 
-      socket.to(room).emit("updateMessages", currMessages)
-      update(currMessages)
+      console.log(JSON.stringify([...userInfo]))
+
+      socket.to(room).emit("updateMessages", currMessages, JSON.stringify([...userInfo]))
+      update(currMessages, JSON.stringify([...userInfo]))
   })
 })
